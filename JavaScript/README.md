@@ -54,7 +54,12 @@
 
 ## 🗓️ 19/01/2026
 
-This session covers string methods, `this` keyword behavior , map , filter , reduce and spread
+- string methods
+- `this` keyword behavior
+- map
+- filter
+- reduce
+- spread
 
 ### 📊 Slides  
 🔗 https://www.genspark.ai/slides?project_id=902f0ab6-14e3-4039-9b17-b0b719ac546f
@@ -69,11 +74,12 @@ This session covers string methods, `this` keyword behavior , map , filter , red
 - Primitive , Non-Primitive
 - Stack and Heap memory
 - Shallow & Deep copy
-- Spread and rest operator
-- OOP - Prototype
-- Prototype Chain
-- Constructor
-- ES6 class
+- Spread , rest operator , JSON.stringify , JSON.parse , StructuredCopy()
+- OOP
+  - Prototype 
+  - Prototype Chain
+  - Constructor
+  - ES6 class
 
 ### 📄 Notes / Slides  
 🔗 https://docs.google.com/document/d/191JvNtuoThs2kG94tTnocljPtLqZVShtik5h25OUNOc/edit?tab=t.0#heading=h.i1wir32z9vc0
