@@ -23,3 +23,11 @@
 - OOP (Inheritance)
 
 ---
+
+## 🗓️ 21/01/2026 - session 3 :
+
+- Project on:
+  - Multithreading
+  - Multiprocessing
+ 
+---
