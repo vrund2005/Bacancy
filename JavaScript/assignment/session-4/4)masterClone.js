@@ -1,3 +1,10 @@
+// Write a function called masterClone(obj) that performs a deep copy without using JSON.stringify or structuredClone.
+// Requirements:
+// It must handle nested objects.
+// It must handle nested arrays.
+// It must not copy functions by reference (they can remain shared, but the object structure must be unique).
+
+
 function masterClone(obj) {
   // Handle null
   if (obj === null) return null;

@@ -1,4 +1,26 @@
 //QUE-[1] Predict the output and explain the memory state.
+// const registry = {
+//   active: [{ id: 1, name: "Alpha" }],
+//   archived: []
+// };
+
+// function cloneAndModify(data) {
+//   // Goal: Create a copy so the original registry isn't changed
+//   const copy = { ...data };
+  
+//   copy.active.push({ id: 2, name: "Beta" });
+//   copy.active[0].name = "Gamma";
+//   copy.version = 2.0;
+  
+//   return copy;
+// }
+
+// const newRegistry = cloneAndModify(registry);
+
+// console.log(registry.active.length); // ?
+// console.log(registry.active[0].name); // ?
+// console.log(registry.version);       // ?
+
 
 const registry = {
   active: [{ id: 1, name: "Alpha" }],
@@ -30,4 +52,3 @@ console.log(registry.version);       // undefined
 //  Registry , and we get Gamma as output.
 //  While the copy.version is primitive so it's only created in the newRegitry and not in
 //  the Registry. and that's why it results into undefined.
-

@@ -28,7 +28,7 @@
 
 
 
-// ANSWER
+//////////////////////// ANSWER ////////////////////////
 /*
     genericAnimal.bark(); // Why does this happen?
 ->  because we type "Dog.prototype = Animal.prototype;" , 

@@ -1,4 +1,4 @@
-// Trace the execution of this class logic.
+// Trace the execution of this class logic.(ANSWER is in the comments)
 
 class Counter {
   static count = 0; //refers to the class
