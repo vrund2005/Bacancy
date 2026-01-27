@@ -63,7 +63,7 @@ Dog.prototype.bark = function() {
   console.log("Woof!");
 };
 
-Object.setPrototypeOf(Dog.prototype,Animal.prototype)
+Object.setPrototypeOf(Dog,Animal)
 
 const myDog = new Dog("Buddy", "Golden");
 const genericAnimal = new Animal("Generic");
