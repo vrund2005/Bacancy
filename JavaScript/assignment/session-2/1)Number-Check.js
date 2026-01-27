@@ -1,3 +1,10 @@
+// Assignment 1: Number Check
+// Write a program to check whether a number is:
+// - Positive
+// - Negative
+// - Zero
+
+
 let a = prompt("Enter a number = ")
 
 if(a == 0){
