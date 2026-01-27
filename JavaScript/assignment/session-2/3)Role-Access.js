@@ -1,6 +1,6 @@
-let role1 = "ADMIN"
-let role2 = "USER"
-let role3 = "MANAGER"
+const role1 = "ADMIN"
+const role2 = "USER"
+const role3 = "MANAGER"
 
 switch(role1){
     case "ADMIN" :
