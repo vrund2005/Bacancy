@@ -12,4 +12,4 @@ function applyCoupon(amount,couponCode){
 
 applyCoupon(1000,"SAVE10")
 applyCoupon(2000,"SAVE20")
-applyCoupon(500,"NONE")
+applyCoupon(500,"NONE") 
