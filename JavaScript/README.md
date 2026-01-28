@@ -85,3 +85,10 @@
 🔗 https://docs.google.com/document/d/191JvNtuoThs2kG94tTnocljPtLqZVShtik5h25OUNOc/edit?tab=t.0#heading=h.i1wir32z9vc0
 
 ---
+
+## 🗓️ 27 / 01 / 2026 (Assignment review)
+
+### 📄 Notes / Slides  
+🔗 https://www.jsv9000.app/
+
+---
