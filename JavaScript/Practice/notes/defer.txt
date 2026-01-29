@@ -1,0 +1,29 @@
+let’s talk about defer, because this is where understanding browsers makes you dangerous.
+                 ~~~~~
+
+When the browser reads HTML, it parses top to bottom. If it sees:
+
+<script src="script.js"></script>
+
+it stops everything, downloads the script, executes it, and only then continues parsing the page.
+That means if your script tries to access elements that haven’t been parsed yet, they don’t exist. Boom. null.
+
+defer changes the rules.
+
+<script src="script.js" defer></script>
+-> With defer:
+
+The browser downloads the script in parallel
+It waits to execute it until the HTML is fully parsed
+Execution happens before DOMContentLoaded
+So your DOM exists when the script runs.
+
+That’s why your code works safely with:
+const body = document.body
+
+Without defer, if the script were in <head>, document.body might not exist yet.
+Alternative solution? Put your script at the end of <body>. Old-school but valid.
+
+Extra nerd bonus:
+defer preserves execution order across multiple scripts. async does not. async executes as soon as the file finishes downloading, chaos-style.
+Web browsers are basically orchestras. defer keeps them in rhythm.
