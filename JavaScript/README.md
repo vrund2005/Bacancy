@@ -85,3 +85,12 @@
 🔗 https://docs.google.com/document/d/191JvNtuoThs2kG94tTnocljPtLqZVShtik5h25OUNOc/edit?tab=t.0#heading=h.i1wir32z9vc0
 
 ---
+
+## 🗓️ 28 / 01 / 2026
+
+- Promises
+- promise chaining
+- DOM manipulation
+- Event Handlers
+- Async-await
+- Event loop
