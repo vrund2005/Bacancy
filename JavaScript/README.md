@@ -92,3 +92,14 @@
 🔗 https://www.jsv9000.app/
 
 ---
+
+## 🗓️ 29 / 01 / 2026
+
+- Promises
+- promise chaining
+- DOM manipulation
+- Event Handlers
+- Async-await
+- Event loop
+
+---
