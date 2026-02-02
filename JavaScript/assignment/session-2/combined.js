@@ -5,7 +5,7 @@
 // - Zero
 
 
-let a = prompt("Enter a number = ")
+const a = prompt("Enter a number = ")
 
 if(a == 0){
     console.log("The number is ZERO")
@@ -47,9 +47,9 @@ for (let a = 1; a <= 20; a++){
 // MANAGER → Moderate access
 // default → Invalid role
 
-let role1 = "ADMIN"
-let role2 = "USER"
-let role3 = "MANAGER"
+const role1 = "ADMIN"
+const role2 = "USER"
+const role3 = "MANAGER"
 
 switch(role1){
     case "ADMIN" :
