@@ -58,7 +58,7 @@
 
 ## 30/01/2026 - session 7 :
 
-"""class Outer:
+```class Outer:
     def __init__(self):
         pass
     class Inner:
@@ -72,7 +72,7 @@ ot.Inner().move()
 try:
     ot.Inner.move()
 except:
-    print("Error in 2nd")"""
+    print("Error in 2nd")```
 - que : do we need to create object to access the class method inside a class ?
 
 ---
