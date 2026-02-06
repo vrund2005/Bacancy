@@ -9,7 +9,7 @@ conn = pg.connect(
 )
 
 cur = conn.cursor()
-cur.execute("insert into users (name, email) values ('John Doe', 'jonnyy1.doe@example.com');")
+cur.execute("insert into users (name, email) values ('Vrund Patel', 'vrund.2005@example.com');")
 cur.execute("SELECT * FROM users;")
 rows = cur.fetchall()
 print(rows)
