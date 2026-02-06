@@ -94,3 +94,28 @@
 - Event Handlers
 - Async-await
 - Event loop
+https://www.jsv9000.app
+---
+
+## 🗓️ 30 / 01 / 2026
+
+- Toaster
+- async-await
+- promises
+- TOKENS & refresh TOKENS
+- cookies
+- setTimeOut
+- setInterval
+- call apply bind
+
+---
+
+## 🗓️ 05 / 01 / 2026
+
+- Web storage
+- local-session
+- cookies
+- ECMA script
+- typescript :) TS
+
+---
