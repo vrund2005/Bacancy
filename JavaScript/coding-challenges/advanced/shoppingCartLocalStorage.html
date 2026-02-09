@@ -1,0 +1,187 @@
+<!-- Problem 1: Async Shopping Cart with LocalStorage
+Objective
+Build a simple shopping cart application that fetches product data asynchronously and persists cart data across browser refreshes.
+Requirements
+Fetch product data using Fetch API from:
+ https://jsonplaceholder.typicode.com/photos?_limit=10
+Use async/await with proper error handling
+Store cart data in localStorage as a deep-copied array of objects
+Use spread operator and structuredClone
+Implement the following using arrow functions:
+addToCart
+removeFromCart (use object destructuring)
+calculateTotal (use reduce)
+Implement event delegation for a dynamically rendered product list
+Add a search input to filter products
+Use string manipulation (split, join)
+Update the DOM using template literals
+Handle “out of stock” scenarios using Promise chaining
+Display errors using innerHTML
+Persist cart data across page refreshes
+Add a Clear Cart button
+Use rest operator to merge state updates
+Constraints
+No page reloads
+No external libraries
+Expected Outcome
+Products load asynchronously
+Cart updates in real time
+Cart data persists after refresh
+Total price updates automatically
+Graceful error handling and clean UI -->
+
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Async Shopping Cart</title>
+</head>
+
+<body>
+
+    <h2>Products</h2>
+    <input type="text" id="search" placeholder="Search products..." />
+    <div id="product-list"></div>
+
+    <h2>Cart</h2>
+    <div id="cart"></div>
+    <p>Total: ₹<span id="total">0</span></p>
+    <button id="clear-cart">Clear Cart</button>
+
+    <div id="error"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            let state = {
+                products: [],
+                cart: JSON.parse(localStorage.getItem("cart")) || []
+            };
+
+            const persistCart = () => {
+                const deepCopy = structuredClone(state.cart);
+                localStorage.setItem("cart", JSON.stringify(deepCopy));
+            };
+
+            const fetchProducts = async () => {
+                try {
+                    const res = await fetch("https://jsonplaceholder.typicode.com/photos?_limit=10");
+
+                    if (!res.ok) throw new Error("Network error");
+
+                    const data = await res.json();
+
+                    state.products = data.map(p => ({
+                        ...p,
+                        price: Math.floor(Math.random() * 500) + 100,
+                        stock: Math.random() > 0.3
+                    }));
+
+                    renderProducts(state.products);
+
+                } catch (err) {
+                    document.getElementById("error").innerHTML =
+                        `<p style="color:red">${err.message}</p>`;
+                }
+            };
+
+            const renderProducts = (products) => {
+                const container = document.getElementById("product-list");
+
+                container.innerHTML = products.map(p => `
+                    <div class="product" data-id="${p.id}">
+                    <h4>${p.title.split(" ").slice(0, 3).join(" ")}</h4>
+                    <img src="${p.thumbnailUrl}" />
+                    <p>₹${p.price}</p>
+                    <button ${!p.stock ? "disabled" : ""}>
+                        ${p.stock ? "Add to Cart" : "Out of Stock"}
+                    </button>
+                    </div>
+                `).join("");
+            };
+
+            const addToCart = (id) => {
+
+                const product = state.products.find(p => p.id === id);
+
+                Promise.resolve(product)
+                    .then(prod => {
+                        if (!prod.stock) {
+                            throw new Error("Out of stock");
+                        }
+
+                        state.cart = [...state.cart, { ...prod, qty: 1 }];
+
+                        persistCart();
+                        renderCart();
+                    })
+                    .catch(err => {
+                        document.getElementById("error").innerHTML =
+                            `<p style="color:red">${err.message}</p>`;
+                    });
+            };
+
+            const removeFromCart = (id) => {
+                state.cart = state.cart.filter(({ id: productId }) => productId !== id);
+                persistCart();
+                renderCart();
+            };
+
+            const calculateTotal = () =>
+                state.cart.reduce((acc, item) => acc + item.price * item.qty, 0);
+
+            const renderCart = () => {
+                const container = document.getElementById("cart");
+
+                container.innerHTML = state.cart.map(item => `
+                    <div>
+                    ${item.title.split(" ").slice(0, 2).join(" ")}
+                    <button data-remove="${item.id}">Remove</button>
+                    </div>
+                `).join("");
+
+                document.getElementById("total").innerText = calculateTotal();
+            };
+
+            document.getElementById("product-list")
+                .addEventListener("click", (e) => {
+                    if (e.target.tagName === "BUTTON") {
+                        const id = Number(e.target.closest(".product").dataset.id);
+                        addToCart(id);
+                    }
+                });
+
+            document.getElementById("cart")
+                .addEventListener("click", (e) => {
+                    if (e.target.dataset.remove) {
+                        removeFromCart(Number(e.target.dataset.remove));
+                    }
+                });
+
+            document.getElementById("search")
+                .addEventListener("input", (e) => {
+                    const value = e.target.value.toLowerCase();
+                    const filtered = state.products.filter(p =>
+                        p.title.toLowerCase().includes(value)
+                    );
+                    renderProducts(filtered);
+                });
+
+            document.getElementById("clear-cart")
+                .addEventListener("click", () => {
+                    state.cart = [];
+                    persistCart();
+                    renderCart();
+                });
+
+            renderCart();
+            fetchProducts();
+
+        });
+    </script>
+
+</body>
+
+</html>
