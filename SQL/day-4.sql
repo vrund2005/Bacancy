@@ -26,4 +26,4 @@ order by age,department;
 
 -- Create a query to sort a new table products by price in descending order and stock_quantity in ascending order.
 select * from products
-order by price desc , stcok_quantity asc;
+order by price desc , stock_quantity asc;
