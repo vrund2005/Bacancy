@@ -49,49 +49,67 @@
 
 
 
+function summarizeUserActivities(activities) {
+    return activities.reduce((acc,cur)=>{
+        const {userId, type, duration = 0} = cur;
+        if(!acc[userId]){
+            acc[userId] = {totalTime : 0}
+        }
+        acc[userId].totalTime += duration;
+        acc[userId][type] = (acc[userId][type] || 0) + 1;
+        return acc;
+    },{})
+}
+
+console.log(summarizeUserActivities([
+  { userId: 1, type: "login", duration: 5 },
+  { userId: 2, type: "browse", duration: 20 },
+  { userId: 1, type: "browse", duration: 15 },
+  { userId: 3, type: "login", duration: 3 },
+  { userId: 2, type: "logout", duration: 2 },
+  { userId: 1, type: "logout", duration: 1 },
+  { userId: 1, type: "login", duration: 4 }
+]))
 
 
+// using this and object method
+
+const userAnalytics = {
+  activities: [],
+
+  summarize() {
+    return this.activities.reduce((acc, activity) => {
+      const { userId, type, duration = 0 } = activity;
+
+      if (!acc[userId]) {
+        acc[userId] = {
+          totalTime: 0
+        };
+      }
+
+      // Add duration safely
+      acc[userId].totalTime += duration;
+
+      // Count activity type
+      acc[userId][type] = (acc[userId][type] || 0) + 1;
+
+      return acc;
+    }, {});
+  }
+};
 
 
+// ----- Usage -----
+const activities = [
+  { userId: 1, type: "login", duration: 5 },
+  { userId: 2, type: "browse", duration: 20 },
+  { userId: 1, type: "browse", duration: 15 },
+  { userId: 3, type: "login", duration: 3 },
+  { userId: 2, type: "logout", duration: 2 },
+  { userId: 1, type: "logout", duration: 1 },
+  { userId: 1, type: "login", duration: 4 }
+];
 
+userAnalytics.activities = activities;
 
-
-// const userAnalytics = {
-//   activities: [],
-
-//   summarize() {
-//     return this.activities.reduce((acc, activity) => {
-//       const { userId, type, duration = 0 } = activity;
-
-//       if (!acc[userId]) {
-//         acc[userId] = {
-//           totalTime: 0
-//         };
-//       }
-
-//       // Add duration safely
-//       acc[userId].totalTime += duration;
-
-//       // Count activity type
-//       acc[userId][type] = (acc[userId][type] || 0) + 1;
-
-//       return acc;
-//     }, {});
-//   }
-// };
-
-
-// // ----- Usage -----
-// const activities = [
-//   { userId: 1, type: "login", duration: 5 },
-//   { userId: 2, type: "browse", duration: 20 },
-//   { userId: 1, type: "browse", duration: 15 },
-//   { userId: 3, type: "login", duration: 3 },
-//   { userId: 2, type: "logout", duration: 2 },
-//   { userId: 1, type: "logout", duration: 1 },
-//   { userId: 1, type: "login", duration: 4 }
-// ];
-
-// userAnalytics.activities = activities;
-
-// console.log(userAnalytics.summarize());
+console.log(userAnalytics.summarize());
