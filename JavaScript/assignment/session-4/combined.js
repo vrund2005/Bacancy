@@ -190,9 +190,7 @@ function masterClone(obj) {
   // Handle objects
   const newObj = {};
   for (let key in obj) {
-    if (obj.hasOwnProperty(key)) {
-      newObj[key] = masterClone(obj[key]);
-    }
+    newObj[key] = masterClone(obj[key]);
   }
 
   return newObj;
