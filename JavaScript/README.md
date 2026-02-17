@@ -98,6 +98,7 @@ https://www.jsv9000.app
 
 ### 📄 Notes / Slides
 🔗 https://docs.google.com/document/d/1iFmbbKBGQEaaF1w09i3VLJeQB5gJp6EGvUVbMvRTHa4/edit?usp=sharing
+
 ---
 
 ## 🗓️ 30 / 01 / 2026
