@@ -119,3 +119,13 @@ https://www.jsv9000.app
 - typescript :) TS
 
 ---
+
+## 🗓️ 10 / 02 / 2026 - session : 10
+
+- Wheat TS
+- magic string TS
+- declaration merging
+- ENUM over Magic string
+- utility types
+
+---
