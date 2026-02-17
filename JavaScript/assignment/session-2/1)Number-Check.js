@@ -5,7 +5,7 @@
 // - Zero
 
 
-let a = prompt("Enter a number = ")
+const a = prompt("Enter a number = ")
 
 if(a == 0){
     console.log("The number is ZERO")
