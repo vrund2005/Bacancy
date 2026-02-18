@@ -30,6 +30,6 @@ class AuthService {
 // Try accessing them outside the class
 // Which members should be exposed and why?
 const authService = new AuthService("Vrund", "vrund765");
-console.log(authService.username); // ✅ Public member accessible
-console.log(authService.password); // ❌ Private member not accessible
-console.log(authService.sessionToken); // ❌ Protected member not accessible outside class   
+console.log(authService.username); // Public member accessible
+console.log(authService.password); // Private member not accessible
+console.log(authService.sessionToken); // Protected member not accessible outside class   
