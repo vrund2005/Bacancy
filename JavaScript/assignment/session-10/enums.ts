@@ -9,15 +9,15 @@ enum Payment {
 function pay(method : Payment){
     console.log("Status :" , method)
 }
-pay(payment.SUCCESS)
+pay(Payment.SUCCESS)
 
 // Try passing an invalid value and observe the error
-pay("Success")
-error : Argument of type '"SUCCESS"' is not assignable to parameter of type 'Payment'.
+// pay("Success")
+// error : Argument of type '"SUCCESS"' is not assignable to parameter of type 'Payment'.
 
 
 // Why enums are better than magic strings?
-They restrict the value space.
-They give autocomplete.
-They prevent typos.
-They are refactor-safe.
+// They restrict the value space.
+// They give autocomplete.
+// They prevent typos.
+// They are refactor-safe.
