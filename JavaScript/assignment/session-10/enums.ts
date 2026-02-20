@@ -12,7 +12,7 @@ function pay(method : Payment){
 pay(payment.SUCCESS)
 
 // Try passing an invalid value and observe the error
-pay("SUCCESS")
+pay("Success")
 error : Argument of type '"SUCCESS"' is not assignable to parameter of type 'Payment'.
 
 
