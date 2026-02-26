@@ -86,7 +86,18 @@
 
 ---
 
+
+## 🗓️ 27 / 01 / 2026 (Assignment review)
+
+### 📄 Notes / Slides  
+🔗 https://www.jsv9000.app/
+
+---
+
+
+=======
 ## 🗓️ 28 / 01 / 2026
+
 
 - Promises
 - promise chaining
@@ -94,6 +105,10 @@
 - Event Handlers
 - Async-await
 - Event loop
+
+
+---
+=======
 https://www.jsv9000.app
 
 ### 📄 Notes / Slides
@@ -133,3 +148,4 @@ https://www.jsv9000.app
 - utility types
 
 ---
+
