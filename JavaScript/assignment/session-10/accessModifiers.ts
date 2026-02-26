@@ -1,7 +1,7 @@
 // Explain which members should be accessible and why
-public members should be accessible to allow interaction with the class's functionality,
-while private members should be hidden to protect internal data and implementation details.
-Protected members can be accessed by derived classes, allowing for extensibility while still maintaining encapsulation.
+// public members should be accessible to allow interaction with the class's functionality,
+// while private members should be hidden to protect internal data and implementation details.
+// Protected members can be accessed by derived classes, allowing for extensibility while still maintaining encapsulation.
 
 // Create a service class exposing only required public methods
 // Keep internal data private
