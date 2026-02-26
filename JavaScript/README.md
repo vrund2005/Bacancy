@@ -86,6 +86,7 @@
 
 ---
 
+
 ## 🗓️ 27 / 01 / 2026 (Assignment review)
 
 ### 📄 Notes / Slides  
@@ -93,7 +94,10 @@
 
 ---
 
-## 🗓️ 29 / 01 / 2026
+
+=======
+## 🗓️ 28 / 01 / 2026
+
 
 - Promises
 - promise chaining
@@ -102,4 +106,46 @@
 - Async-await
 - Event loop
 
+
 ---
+=======
+https://www.jsv9000.app
+
+### 📄 Notes / Slides
+🔗 https://docs.google.com/document/d/1iFmbbKBGQEaaF1w09i3VLJeQB5gJp6EGvUVbMvRTHa4/edit?usp=sharing
+
+---
+
+## 🗓️ 30 / 01 / 2026
+
+- Toaster
+- async-await
+- promises
+- TOKENS & refresh TOKENS
+- cookies
+- setTimeOut
+- setInterval
+- call apply bind
+
+---
+
+## 🗓️ 05 / 02 / 2026
+
+- Web storage
+- local-session
+- cookies
+- ECMA script
+- typescript :) TS
+
+---
+
+## 🗓️ 10 / 02 / 2026 - session : 10
+
+- Wheat TS
+- magic string TS
+- declaration merging
+- ENUM over Magic string
+- utility types
+
+---
+
