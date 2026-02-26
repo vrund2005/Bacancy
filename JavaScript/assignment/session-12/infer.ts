@@ -2,8 +2,8 @@
 // Test it with a function that takes (id: string, active: boolean)
 
 
-type FirstArgument1<T> = T extends (...args:infer Args) => any ? Args[0] : never;
-type FirstArgument2<T> = T extends (arg1:infer A,...args:any[]) => any ? A : never;
+type FirstArgument1<T> = T extends (...args:infer Args) => void ? Args[0] : never;
+type FirstArgument2<T> = T extends (arg1:infer A,...args:any[]) => void ? A : never;
 
 function some(id:string,active:boolean):void{}
 
