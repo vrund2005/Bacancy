@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Storage</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" placeholder="Enter text">
+        <button type="button" id="save">Save</button>
+        <button type="button" id="load">Load</button>
+    </form>
+
+<script>
+    const save_me = document.getElementById('save')
+    const load_me = document.getElementById('load')
+
+    save_me.addEventListener('click', () => {
+        const input = document.querySelector('input').value
+        localStorage.setItem('myData', input)
+        sessionStorage.setItem('myData', input)
+    })
+
+    load_me.addEventListener('click', () => {
+        const data1 = localStorage.getItem('myData')
+        const data2 = sessionStorage.getItem('myData')
+        alert("From the localStorage: " + data1)
+        alert("From the sessionStorage: " + data2)
+    })
+</script>
+</body>
+</html>
