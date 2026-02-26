@@ -1,3 +1,5 @@
+NOTES on DEFER :
+
 let’s talk about defer, because this is where understanding browsers makes you dangerous.
                  ~~~~~
 
