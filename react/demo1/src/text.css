@@ -1,0 +1,9 @@
+.text {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.text h1 {
+  color: blue;
+  font-size: 40px;
+}
