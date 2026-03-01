@@ -1,0 +1,96 @@
+<!-- Problem 3: Dynamic Product List with Filter and Sort
+Objective
+Create a dynamic product list UI with filtering and sorting capabilities.
+Requirements
+Render products from a JavaScript array
+Implement:
+Filter by price
+Sort by product name
+Update DOM dynamically on button click
+Render HTML using template literals
+Attach event listeners properly
+Constraints
+No page reloads
+Use only map, filter, and sort for data manipulation
+Expected Outcome
+Product list updates instantly
+Filters and sorting work correctly
+Clean, readable DOM updates -->
+
+<!-- const products = [
+  { id: 1, name: "Laptop", price: 800 },
+  { id: 2, name: "Phone", price: 400 },
+  { id: 3, name: "Headphones", price: 150 },
+  { id: 4, name: "Keyboard", price: 100 },
+  { id: 5, name: "Monitor", price: 300 }
+]; -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic product List</title>
+</head>
+
+<body>
+    <h1 style="color: blue;">Products</h1>
+    <div id="product-list"></div>
+    <div id="filter">
+        <input type="range" min="100" max="800" value="500" class="slider" id="myRange">
+        <h2 style="color: blue;">Max Value : <span id="demo"></span></h2>
+    </div>
+    <div>
+        <button id="sort" style="font-size: 15px; cursor: pointer; color:white; background-color: black; border-radius: 12px;">Sort by Product Name</button>
+        <button id="redo" style="font-size: 14px; cursor: pointer; color:white; background-color: black; border-radius: 12px;">Remove Filters</button>
+    </div>
+
+    <script>
+
+        const products = [
+            { id: 1, name: "Laptop", price: 800 },
+            { id: 2, name: "Phone", price: 400 },
+            { id: 3, name: "Headphones", price: 150 },
+            { id: 4, name: "Keyboard", price: 100 },
+            { id: 5, name: "Monitor", price: 300 }
+        ];
+
+        var slider = document.getElementById("myRange")
+        var sval = document.getElementById("demo")
+        const product_list = document.getElementById("product-list")
+        const sort = document.getElementById("sort")
+        const redo = document.getElementById("redo")
+
+        function renderProduct(products){
+            product_list.innerHTML = products
+            .map(p => `<h3 style="color:red">${p.name}</h3> <p > Price : ${p.price}</p>`)
+            .join("")
+        }
+
+        renderProduct(products)
+
+        sval.innerHTML = slider.value
+        slider.oninput = function () {
+            sval.innerHTML = this.value;
+        }
+
+        slider.addEventListener("input", function () {
+            const filteredProducts = products.filter(p => p.price <= this.value)
+            renderProduct(filteredProducts)
+        })
+
+        sort.addEventListener("click",()=>{
+            const sorted_products = [...products].sort((a, b) => a.name.localeCompare(b.name));
+            renderProduct(sorted_products)
+        })
+
+        redo.addEventListener("click",()=>{
+            renderProduct(products);
+        })
+
+    </script>
+</body>
+
+</html>
