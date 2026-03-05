@@ -58,7 +58,7 @@ function isSuccess<T>(response: ApiResponse<T>): response is { success: true; da
     return response.success === true;
 }
 
-// Example usage:
+// Example:
 const response: ApiResponse<{ id: number; name: string }> = {
     success: true,
     data: { id: 1, name: 'Product A' },
