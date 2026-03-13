@@ -1,0 +1,54 @@
+*{
+    background-color: rgb(0, 0, 0);
+    color: rgb(193, 66, 243);
+}
+
+h1 {
+    font-size:50px;
+}
+
+.userdiv{
+    border: 2px rgb(249, 130, 130) solid;
+    border-radius: 12px;
+}
+
+.set{
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    position: relative;
+    top: 100px;
+}
+
+.set p {
+    color : rgb(26, 15, 243);
+    font-size: 22px;
+}
+
+a {
+    color : rgb(48, 246, 55);
+    text-decoration: none;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 10px;
+    position: relative;
+    font-size: 2rem;
+}
+
+.abc{
+    text-align: center;
+    position: relative;
+    top : 50px;
+}
+
+.btn{
+    border: 2px white solid;
+    border-radius: 100px;
+    padding: 100px;
+    margin: 10px;
+    position: relative;
+    font-size: 50px;
+    top:100px;
+}
